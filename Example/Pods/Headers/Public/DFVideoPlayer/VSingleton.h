@@ -1,0 +1,1 @@
+../../../../../Pod/Vendor/Vitamio/include/Vitamio/VSingleton.h

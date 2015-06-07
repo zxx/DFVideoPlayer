@@ -1,0 +1,837 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0159DEA4B2A6778A4BBAB805 /* VMediaPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 17F128B62B3EB18D49EA30F7 /* VMediaPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0D2A09AE2875AE0A93575342 /* kr-video-player-pause@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5228CFCC3D392B11FDFBE7 /* kr-video-player-pause@3x.png */; };
+		11788690B8FD497344C074A4 /* OpenGlES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1FDBBF2317EDB0A88281F92 /* OpenGlES.framework */; };
+		13684A30D71C650AC6B7E22A /* kr-video-player-play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B54149D2DC98B23B5A7C406F /* kr-video-player-play@2x.png */; };
+		23D539A040A7C3408E020ADF /* DFVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DE06B39C68DEFA16A7A0167F /* DFVideoPlayer.m */; };
+		2DAC4A11B501AFD546B8CEAF /* kr-video-player-fullscreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13E78F4CCDFB56018589B51E /* kr-video-player-fullscreen@2x.png */; };
+		2EB48CF8CDBEC581B8C62F3E /* Pods-DFVideoPlayer_Example-DFVideoPlayer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E626699A4144864A66D5F7F /* Pods-DFVideoPlayer_Example-DFVideoPlayer-dummy.m */; };
+		382DF013DE3CFB7095300C6D /* VPlayerManageDef.h in Headers */ = {isa = PBXBuildFile; fileRef = 27C3A0A7EA587FEE0670EAE7 /* VPlayerManageDef.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4540F0882CB4B3A4675F74A3 /* kr-video-player-shrinkscreen@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3487B08DA93953C5ACF23DE5 /* kr-video-player-shrinkscreen@3x.png */; };
+		4A34A2D102DBA63E36EBB733 /* kr-video-player-close@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A3D7D661E0387C2919D1705 /* kr-video-player-close@3x.png */; };
+		54C973A9671B434BEDA1BAB5 /* VDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = D28166C232B459D0FF5E9862 /* VDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5568D317C3D59BED78ABE905 /* Pods-DFVideoPlayer_Example-DFVideoPlayer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 617E868E1C205430C3C177DE /* Pods-DFVideoPlayer_Example-DFVideoPlayer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5778D6D17B36A1991B6ED561 /* Pods-DFVideoPlayer_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 62D4ACE063F8979108ED9C1C /* Pods-DFVideoPlayer_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FE3911B3404BB570696CB66 /* DFVideoControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C59A4BC85CB6CCDDA8C598E /* DFVideoControlView.m */; };
+		60BC255DC8D337C24A604C65 /* Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = FC2AAB15AF5635D2EEB65AB2 /* Utilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		61E5976F35FD5E7A1C2FE4F3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FCD455A12521B36D9E47F3 /* QuartzCore.framework */; };
+		6570E6903BD162246F98A115 /* kr-video-player-pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BEFFD581DA69926EF5960B9F /* kr-video-player-pause@2x.png */; };
+		6F15CE50EA29B37E16E3BD50 /* kr-video-player-fullscreen@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F0F832D172613D03B654A3 /* kr-video-player-fullscreen@3x.png */; };
+		75856AF30F2D76B64FE263B3 /* DFVideoPlayer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 47A24DF58A3443482D2BC1A1 /* DFVideoPlayer.bundle */; };
+		7653DE2ED720EA63FF14BE02 /* kr-video-player-point@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42A0102FBF6A5070EF56CA04 /* kr-video-player-point@2x.png */; };
+		89F534A919BC449FA44CEF37 /* kr-video-player-close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA509A13E89ADD51B1898F15 /* kr-video-player-close@2x.png */; };
+		8A575BC79F85226BA9E85B94 /* kr-video-player-point@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24BDC5302A7BE2A8BB554EA9 /* kr-video-player-point@3x.png */; };
+		946739F500BADF2AE977EE97 /* Vitamio.h in Headers */ = {isa = PBXBuildFile; fileRef = DCD9F1DCFC9D1BD811018175 /* Vitamio.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		95CF8F6F09F8A1A21B822E15 /* VSingleton.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CA5F619D4C1779A3D146578 /* VSingleton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B1E4D8A8AE2BCB4CA14B96B7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5398717955387E6B2FC410D9 /* AudioToolbox.framework */; };
+		B7CC9AA0361C76974842308D /* kr-video-player-play@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FBA1952F2933FDF155BE3557 /* kr-video-player-play@3x.png */; };
+		BDE2D5B94FE29310AC1B845E /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF5072B51DB4BF1DF12ABFBF /* CoreMedia.framework */; };
+		BF536D69149525552FD320BE /* DFVideoPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 24A5DECD2154B53B5F885C2C /* DFVideoPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C3F39568382A49C0E1345396 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8851CE1E7582EC93EC70CDA /* Foundation.framework */; };
+		CE6F51C448EC6B30F07144AB /* VMediaExtracterDef.h in Headers */ = {isa = PBXBuildFile; fileRef = F77A805F8014A71FF824B027 /* VMediaExtracterDef.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFB23C16A16F7E00BBCBFDE2 /* Pods-DFVideoPlayer_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 886660C59BE094085690F8C2 /* Pods-DFVideoPlayer_Example-dummy.m */; };
+		D8C2FDA350DBD04349C80351 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5C26DB41A76AF1AEA05019 /* Utilities.m */; };
+		D96AF67A3B90F85B1AC3CCD6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1B37C9195AB521319633969 /* CoreGraphics.framework */; };
+		DECA3292E1517C15D4CE7B27 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8851CE1E7582EC93EC70CDA /* Foundation.framework */; };
+		DF188A8C124554081CC58777 /* DFVideoControlView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F83F0113E0405ABD5405132 /* DFVideoControlView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E92F99B24701338B1D215999 /* VMediaPlayerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D568164000929A61FBCA853 /* VMediaPlayerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EACC94095453F114E90906E0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1559560F7938DC8F803F7FF9 /* AVFoundation.framework */; };
+		EFB1593D8AF0BFB9722B9796 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59F67B1D5C272DA0D720B71B /* MediaPlayer.framework */; };
+		F199CD2F907B2E8C144F831C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F7C12E7BBEAC9B22C1A2262 /* UIKit.framework */; };
+		F36F5CBD1939917782B78EEB /* kr-video-player-shrinkscreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8758B6EDAE36773771E5F79 /* kr-video-player-shrinkscreen@2x.png */; };
+		F77B49BACCDE0622334D6548 /* VMediaExtracter.h in Headers */ = {isa = PBXBuildFile; fileRef = 9109A2991620514D95DCC42D /* VMediaExtracter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		208CBFB4C0C72C60E3394BB0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49B2CA70860C32DF4EC9F119 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DA4936B1B4B108515F38833C;
+			remoteInfo = "Pods-DFVideoPlayer_Example-DFVideoPlayer-DFVideoPlayer";
+		};
+		56ABAAE55000A49092C615CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49B2CA70860C32DF4EC9F119 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F118F919375EE56CE609EC6;
+			remoteInfo = "Pods-DFVideoPlayer_Example-DFVideoPlayer";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		13E78F4CCDFB56018589B51E /* kr-video-player-fullscreen@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "kr-video-player-fullscreen@2x.png"; sourceTree = "<group>"; };
+		1559560F7938DC8F803F7FF9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		1748F4B70FA9FC019D46AEA5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17F128B62B3EB18D49EA30F7 /* VMediaPlayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = VMediaPlayer.h; sourceTree = "<group>"; };
+		1B24DF6CE431384892EBBA3C /* Pods-DFVideoPlayer_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DFVideoPlayer_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		1D3B0041A234518BBBEBEBFB /* Pods-DFVideoPlayer_Example-DFVideoPlayer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DFVideoPlayer_Example-DFVideoPlayer-prefix.pch"; sourceTree = "<group>"; };
+		24A5DECD2154B53B5F885C2C /* DFVideoPlayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DFVideoPlayer.h; sourceTree = "<group>"; };
+		24BDC5302A7BE2A8BB554EA9 /* kr-video-player-point@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "kr-video-player-point@3x.png"; sourceTree = "<group>"; };
+		265C314693B0D799D7C2ED2A /* Pods-DFVideoPlayer_Example-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DFVideoPlayer_Example-environment.h"; sourceTree = "<group>"; };
+		27C3A0A7EA587FEE0670EAE7 /* VPlayerManageDef.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = VPlayerManageDef.h; sourceTree = "<group>"; };
+		2C59A4BC85CB6CCDDA8C598E /* DFVideoControlView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DFVideoControlView.m; sourceTree = "<group>"; };
+		3142B7C90D18ADCE9C04BDA3 /* libopenssl.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libopenssl.a; path = Pod/Vendor/Vitamio/libopenssl.a; sourceTree = "<group>"; };
+		3487B08DA93953C5ACF23DE5 /* kr-video-player-shrinkscreen@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "kr-video-player-shrinkscreen@3x.png"; sourceTree = "<group>"; };
+		362878ADE8B4361E8873DD39 /* libVitamio.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libVitamio.a; path = Pod/Vendor/Vitamio/libVitamio.a; sourceTree = "<group>"; };
+		42A0102FBF6A5070EF56CA04 /* kr-video-player-point@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "kr-video-player-point@2x.png"; sourceTree = "<group>"; };
+		42E892A08C1C13451B05C3DF /* Pods-DFVideoPlayer_Example-DFVideoPlayer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-DFVideoPlayer_Example-DFVideoPlayer.modulemap"; sourceTree = "<group>"; };
+		47A24DF58A3443482D2BC1A1 /* DFVideoPlayer.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DFVideoPlayer.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CA5F619D4C1779A3D146578 /* VSingleton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = VSingleton.h; sourceTree = "<group>"; };
+		4D568164000929A61FBCA853 /* VMediaPlayerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = VMediaPlayerDelegate.h; sourceTree = "<group>"; };
+		4F7C12E7BBEAC9B22C1A2262 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		5398717955387E6B2FC410D9 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		56EA4E5D04005995D7896C6F /* Pods-DFVideoPlayer_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DFVideoPlayer_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		59F67B1D5C272DA0D720B71B /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/MediaPlayer.framework; sourceTree = DEVELOPER_DIR; };
+		5A3D7D661E0387C2919D1705 /* kr-video-player-close@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "kr-video-player-close@3x.png"; sourceTree = "<group>"; };
+		5C0481ADCFC00884D1ABA23D /* Pods-DFVideoPlayer_Example-DFVideoPlayer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DFVideoPlayer_Example-DFVideoPlayer.xcconfig"; sourceTree = "<group>"; };
+		5D822B016D07261718492A47 /* Pods-DFVideoPlayer_Example-DFVideoPlayer-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DFVideoPlayer_Example-DFVideoPlayer-Private.xcconfig"; sourceTree = "<group>"; };
+		5F83F0113E0405ABD5405132 /* DFVideoControlView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DFVideoControlView.h; sourceTree = "<group>"; };
+		6043C7A2F0C485BD28FA261F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		617E868E1C205430C3C177DE /* Pods-DFVideoPlayer_Example-DFVideoPlayer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DFVideoPlayer_Example-DFVideoPlayer-umbrella.h"; sourceTree = "<group>"; };
+		62D4ACE063F8979108ED9C1C /* Pods-DFVideoPlayer_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DFVideoPlayer_Example-umbrella.h"; sourceTree = "<group>"; };
+		6624DDD33B32F8A7BC9D6EF7 /* Pods-DFVideoPlayer_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DFVideoPlayer_Example.release.xcconfig"; sourceTree = "<group>"; };
+		75F0F832D172613D03B654A3 /* kr-video-player-fullscreen@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "kr-video-player-fullscreen@3x.png"; sourceTree = "<group>"; };
+		7E626699A4144864A66D5F7F /* Pods-DFVideoPlayer_Example-DFVideoPlayer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DFVideoPlayer_Example-DFVideoPlayer-dummy.m"; sourceTree = "<group>"; };
+		886660C59BE094085690F8C2 /* Pods-DFVideoPlayer_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DFVideoPlayer_Example-dummy.m"; sourceTree = "<group>"; };
+		9109A2991620514D95DCC42D /* VMediaExtracter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = VMediaExtracter.h; sourceTree = "<group>"; };
+		A1CEF0EAC85DD073A6EE86D9 /* Pods-DFVideoPlayer_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DFVideoPlayer_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A8758B6EDAE36773771E5F79 /* kr-video-player-shrinkscreen@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "kr-video-player-shrinkscreen@2x.png"; sourceTree = "<group>"; };
+		A8851CE1E7582EC93EC70CDA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		AA316EAF4E63CA3D5F9334DB /* DFVideoPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DFVideoPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF5072B51DB4BF1DF12ABFBF /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreMedia.framework; sourceTree = DEVELOPER_DIR; };
+		B1FDBBF2317EDB0A88281F92 /* OpenGlES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGlES.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/OpenGlES.framework; sourceTree = DEVELOPER_DIR; };
+		B54149D2DC98B23B5A7C406F /* kr-video-player-play@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "kr-video-player-play@2x.png"; sourceTree = "<group>"; };
+		BE5228CFCC3D392B11FDFBE7 /* kr-video-player-pause@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "kr-video-player-pause@3x.png"; sourceTree = "<group>"; };
+		BEFFD581DA69926EF5960B9F /* kr-video-player-pause@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "kr-video-player-pause@2x.png"; sourceTree = "<group>"; };
+		BFD575071B128C032CDF4593 /* Pods-DFVideoPlayer_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DFVideoPlayer_Example-frameworks.sh"; sourceTree = "<group>"; };
+		C4ED2FA6F6C1A513A3017AEE /* Pods-DFVideoPlayer_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-DFVideoPlayer_Example.modulemap"; sourceTree = "<group>"; };
+		C7E28678451A5DADFA65168B /* Pods-DFVideoPlayer_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DFVideoPlayer_Example-resources.sh"; sourceTree = "<group>"; };
+		CF5C26DB41A76AF1AEA05019 /* Utilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
+		D28166C232B459D0FF5E9862 /* VDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = VDefines.h; sourceTree = "<group>"; };
+		D397283EBB040AF22B19F776 /* Pods_DFVideoPlayer_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DFVideoPlayer_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8FCD455A12521B36D9E47F3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		DCD9F1DCFC9D1BD811018175 /* Vitamio.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Vitamio.h; sourceTree = "<group>"; };
+		DE06B39C68DEFA16A7A0167F /* DFVideoPlayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DFVideoPlayer.m; sourceTree = "<group>"; };
+		EA509A13E89ADD51B1898F15 /* kr-video-player-close@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "kr-video-player-close@2x.png"; sourceTree = "<group>"; };
+		F1B37C9195AB521319633969 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		F5253C4DEEB67BD23BDE8548 /* libffmpeg.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libffmpeg.a; path = Pod/Vendor/Vitamio/libffmpeg.a; sourceTree = "<group>"; };
+		F5B9D530DE3C0845650FA839 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F77A805F8014A71FF824B027 /* VMediaExtracterDef.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = VMediaExtracterDef.h; sourceTree = "<group>"; };
+		FBA1952F2933FDF155BE3557 /* kr-video-player-play@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "kr-video-player-play@3x.png"; sourceTree = "<group>"; };
+		FC2AAB15AF5635D2EEB65AB2 /* Utilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2D261890C9FEEFB65D81C317 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42814D6A33DCBA9C1907D0F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EACC94095453F114E90906E0 /* AVFoundation.framework in Frameworks */,
+				B1E4D8A8AE2BCB4CA14B96B7 /* AudioToolbox.framework in Frameworks */,
+				D96AF67A3B90F85B1AC3CCD6 /* CoreGraphics.framework in Frameworks */,
+				BDE2D5B94FE29310AC1B845E /* CoreMedia.framework in Frameworks */,
+				C3F39568382A49C0E1345396 /* Foundation.framework in Frameworks */,
+				EFB1593D8AF0BFB9722B9796 /* MediaPlayer.framework in Frameworks */,
+				11788690B8FD497344C074A4 /* OpenGlES.framework in Frameworks */,
+				61E5976F35FD5E7A1C2FE4F3 /* QuartzCore.framework in Frameworks */,
+				F199CD2F907B2E8C144F831C /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AC07B07D0BA4AA91C0C1E9F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DECA3292E1517C15D4CE7B27 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0250662130910121AA523BBD /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				EA509A13E89ADD51B1898F15 /* kr-video-player-close@2x.png */,
+				5A3D7D661E0387C2919D1705 /* kr-video-player-close@3x.png */,
+				13E78F4CCDFB56018589B51E /* kr-video-player-fullscreen@2x.png */,
+				75F0F832D172613D03B654A3 /* kr-video-player-fullscreen@3x.png */,
+				BEFFD581DA69926EF5960B9F /* kr-video-player-pause@2x.png */,
+				BE5228CFCC3D392B11FDFBE7 /* kr-video-player-pause@3x.png */,
+				B54149D2DC98B23B5A7C406F /* kr-video-player-play@2x.png */,
+				FBA1952F2933FDF155BE3557 /* kr-video-player-play@3x.png */,
+				42A0102FBF6A5070EF56CA04 /* kr-video-player-point@2x.png */,
+				24BDC5302A7BE2A8BB554EA9 /* kr-video-player-point@3x.png */,
+				A8758B6EDAE36773771E5F79 /* kr-video-player-shrinkscreen@2x.png */,
+				3487B08DA93953C5ACF23DE5 /* kr-video-player-shrinkscreen@3x.png */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		05CFFBD8EFD5C369D1CC655E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5F83F0113E0405ABD5405132 /* DFVideoControlView.h */,
+				2C59A4BC85CB6CCDDA8C598E /* DFVideoControlView.m */,
+				24A5DECD2154B53B5F885C2C /* DFVideoPlayer.h */,
+				DE06B39C68DEFA16A7A0167F /* DFVideoPlayer.m */,
+				FC2AAB15AF5635D2EEB65AB2 /* Utilities.h */,
+				CF5C26DB41A76AF1AEA05019 /* Utilities.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		094C572350C35A13EFA0C784 /* Vitamio */ = {
+			isa = PBXGroup;
+			children = (
+				53A533F3D22FEB890CE7458F /* include */,
+			);
+			path = Vitamio;
+			sourceTree = "<group>";
+		};
+		09F8C73B6638879F3BE61304 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				362878ADE8B4361E8873DD39 /* libVitamio.a */,
+				F5253C4DEEB67BD23BDE8548 /* libffmpeg.a */,
+				3142B7C90D18ADCE9C04BDA3 /* libopenssl.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1AFC4FA3B574CE5D7D80982D /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				094C572350C35A13EFA0C784 /* Vitamio */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		4312347AE04D244006883BA3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6C2CEBA9C1DBB5F5B5EEC7F3 /* Pod */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		4F4BFB69ED45A865753B5EB4 /* DFVideoPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				5AAB4C8FB7B925EEDBE252A3 /* Pod */,
+				4312347AE04D244006883BA3 /* Resources */,
+				A10D25511C8F2527CE57BC60 /* Support Files */,
+				ED64F46FF8EBC2435C86F32C /* Vitamio */,
+			);
+			name = DFVideoPlayer;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		53A533F3D22FEB890CE7458F /* include */ = {
+			isa = PBXGroup;
+			children = (
+				D298DCDA59EAEFA21E8541AB /* Vitamio */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		5AAB4C8FB7B925EEDBE252A3 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				05CFFBD8EFD5C369D1CC655E /* Classes */,
+			);
+			path = Pod;
+			sourceTree = "<group>";
+		};
+		61304BEABD1EC58B4A8F6926 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				47A24DF58A3443482D2BC1A1 /* DFVideoPlayer.bundle */,
+				AA316EAF4E63CA3D5F9334DB /* DFVideoPlayer.framework */,
+				D397283EBB040AF22B19F776 /* Pods_DFVideoPlayer_Example.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6C2CEBA9C1DBB5F5B5EEC7F3 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				0250662130910121AA523BBD /* Assets */,
+			);
+			path = Pod;
+			sourceTree = "<group>";
+		};
+		7D102DADE384CC526A5877B3 = {
+			isa = PBXGroup;
+			children = (
+				F5B9D530DE3C0845650FA839 /* Podfile */,
+				7FC96A8B828647FE8E159778 /* Development Pods */,
+				F3E84F809D176E8FE33C7D5A /* Frameworks */,
+				61304BEABD1EC58B4A8F6926 /* Products */,
+				F824E19C8C9C9EDDC676F1FC /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		7FC96A8B828647FE8E159778 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4F4BFB69ED45A865753B5EB4 /* DFVideoPlayer */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		A10D25511C8F2527CE57BC60 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6043C7A2F0C485BD28FA261F /* Info.plist */,
+				42E892A08C1C13451B05C3DF /* Pods-DFVideoPlayer_Example-DFVideoPlayer.modulemap */,
+				5C0481ADCFC00884D1ABA23D /* Pods-DFVideoPlayer_Example-DFVideoPlayer.xcconfig */,
+				5D822B016D07261718492A47 /* Pods-DFVideoPlayer_Example-DFVideoPlayer-Private.xcconfig */,
+				7E626699A4144864A66D5F7F /* Pods-DFVideoPlayer_Example-DFVideoPlayer-dummy.m */,
+				1D3B0041A234518BBBEBEBFB /* Pods-DFVideoPlayer_Example-DFVideoPlayer-prefix.pch */,
+				617E868E1C205430C3C177DE /* Pods-DFVideoPlayer_Example-DFVideoPlayer-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/Pods-DFVideoPlayer_Example-DFVideoPlayer";
+			sourceTree = "<group>";
+		};
+		B5AB30B0D883CD3FA3E16AF1 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				1559560F7938DC8F803F7FF9 /* AVFoundation.framework */,
+				5398717955387E6B2FC410D9 /* AudioToolbox.framework */,
+				F1B37C9195AB521319633969 /* CoreGraphics.framework */,
+				AF5072B51DB4BF1DF12ABFBF /* CoreMedia.framework */,
+				A8851CE1E7582EC93EC70CDA /* Foundation.framework */,
+				59F67B1D5C272DA0D720B71B /* MediaPlayer.framework */,
+				B1FDBBF2317EDB0A88281F92 /* OpenGlES.framework */,
+				D8FCD455A12521B36D9E47F3 /* QuartzCore.framework */,
+				4F7C12E7BBEAC9B22C1A2262 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		B7CC6FBF775B170F4BC006B6 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				1AFC4FA3B574CE5D7D80982D /* Vendor */,
+			);
+			path = Pod;
+			sourceTree = "<group>";
+		};
+		D298DCDA59EAEFA21E8541AB /* Vitamio */ = {
+			isa = PBXGroup;
+			children = (
+				D28166C232B459D0FF5E9862 /* VDefines.h */,
+				9109A2991620514D95DCC42D /* VMediaExtracter.h */,
+				F77A805F8014A71FF824B027 /* VMediaExtracterDef.h */,
+				17F128B62B3EB18D49EA30F7 /* VMediaPlayer.h */,
+				4D568164000929A61FBCA853 /* VMediaPlayerDelegate.h */,
+				27C3A0A7EA587FEE0670EAE7 /* VPlayerManageDef.h */,
+				4CA5F619D4C1779A3D146578 /* VSingleton.h */,
+				DCD9F1DCFC9D1BD811018175 /* Vitamio.h */,
+			);
+			path = Vitamio;
+			sourceTree = "<group>";
+		};
+		D5874716B24DABB1F500B2AF /* Pods-DFVideoPlayer_Example */ = {
+			isa = PBXGroup;
+			children = (
+				1748F4B70FA9FC019D46AEA5 /* Info.plist */,
+				C4ED2FA6F6C1A513A3017AEE /* Pods-DFVideoPlayer_Example.modulemap */,
+				A1CEF0EAC85DD073A6EE86D9 /* Pods-DFVideoPlayer_Example-acknowledgements.markdown */,
+				56EA4E5D04005995D7896C6F /* Pods-DFVideoPlayer_Example-acknowledgements.plist */,
+				886660C59BE094085690F8C2 /* Pods-DFVideoPlayer_Example-dummy.m */,
+				265C314693B0D799D7C2ED2A /* Pods-DFVideoPlayer_Example-environment.h */,
+				BFD575071B128C032CDF4593 /* Pods-DFVideoPlayer_Example-frameworks.sh */,
+				C7E28678451A5DADFA65168B /* Pods-DFVideoPlayer_Example-resources.sh */,
+				62D4ACE063F8979108ED9C1C /* Pods-DFVideoPlayer_Example-umbrella.h */,
+				1B24DF6CE431384892EBBA3C /* Pods-DFVideoPlayer_Example.debug.xcconfig */,
+				6624DDD33B32F8A7BC9D6EF7 /* Pods-DFVideoPlayer_Example.release.xcconfig */,
+			);
+			name = "Pods-DFVideoPlayer_Example";
+			path = "Target Support Files/Pods-DFVideoPlayer_Example";
+			sourceTree = "<group>";
+		};
+		ED64F46FF8EBC2435C86F32C /* Vitamio */ = {
+			isa = PBXGroup;
+			children = (
+				09F8C73B6638879F3BE61304 /* Frameworks */,
+				B7CC6FBF775B170F4BC006B6 /* Pod */,
+			);
+			name = Vitamio;
+			sourceTree = "<group>";
+		};
+		F3E84F809D176E8FE33C7D5A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B5AB30B0D883CD3FA3E16AF1 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F824E19C8C9C9EDDC676F1FC /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D5874716B24DABB1F500B2AF /* Pods-DFVideoPlayer_Example */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		01B4D9E2E136D7B2BDF74123 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF188A8C124554081CC58777 /* DFVideoControlView.h in Headers */,
+				BF536D69149525552FD320BE /* DFVideoPlayer.h in Headers */,
+				5568D317C3D59BED78ABE905 /* Pods-DFVideoPlayer_Example-DFVideoPlayer-umbrella.h in Headers */,
+				60BC255DC8D337C24A604C65 /* Utilities.h in Headers */,
+				54C973A9671B434BEDA1BAB5 /* VDefines.h in Headers */,
+				F77B49BACCDE0622334D6548 /* VMediaExtracter.h in Headers */,
+				CE6F51C448EC6B30F07144AB /* VMediaExtracterDef.h in Headers */,
+				0159DEA4B2A6778A4BBAB805 /* VMediaPlayer.h in Headers */,
+				E92F99B24701338B1D215999 /* VMediaPlayerDelegate.h in Headers */,
+				382DF013DE3CFB7095300C6D /* VPlayerManageDef.h in Headers */,
+				95CF8F6F09F8A1A21B822E15 /* VSingleton.h in Headers */,
+				946739F500BADF2AE977EE97 /* Vitamio.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		219B15EA1CDA046877DF4F62 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5778D6D17B36A1991B6ED561 /* Pods-DFVideoPlayer_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1F118F919375EE56CE609EC6 /* Pods-DFVideoPlayer_Example-DFVideoPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07FCA8DC4C9BC420FA6FBC3E /* Build configuration list for PBXNativeTarget "Pods-DFVideoPlayer_Example-DFVideoPlayer" */;
+			buildPhases = (
+				3ED1D79EE9252EACDC589549 /* Sources */,
+				42814D6A33DCBA9C1907D0F1 /* Frameworks */,
+				E06DB0D36BA81484F7054647 /* Resources */,
+				01B4D9E2E136D7B2BDF74123 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				290DF94B14B0E775062DA333 /* PBXTargetDependency */,
+			);
+			name = "Pods-DFVideoPlayer_Example-DFVideoPlayer";
+			productName = "Pods-DFVideoPlayer_Example-DFVideoPlayer";
+			productReference = AA316EAF4E63CA3D5F9334DB /* DFVideoPlayer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9788AA19C91B57EF5428DBC8 /* Pods-DFVideoPlayer_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0EE84E7D1BF592EF7F4D1A34 /* Build configuration list for PBXNativeTarget "Pods-DFVideoPlayer_Example" */;
+			buildPhases = (
+				AA494863A2218F08E6BC96B4 /* Sources */,
+				5AC07B07D0BA4AA91C0C1E9F /* Frameworks */,
+				219B15EA1CDA046877DF4F62 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				751DD251087D74DC747752A8 /* PBXTargetDependency */,
+			);
+			name = "Pods-DFVideoPlayer_Example";
+			productName = "Pods-DFVideoPlayer_Example";
+			productReference = D397283EBB040AF22B19F776 /* Pods_DFVideoPlayer_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DA4936B1B4B108515F38833C /* Pods-DFVideoPlayer_Example-DFVideoPlayer-DFVideoPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C18FE933A8B27DA26B2D8DF8 /* Build configuration list for PBXNativeTarget "Pods-DFVideoPlayer_Example-DFVideoPlayer-DFVideoPlayer" */;
+			buildPhases = (
+				B6EAC07E43A97F07044FB45B /* Sources */,
+				2D261890C9FEEFB65D81C317 /* Frameworks */,
+				BCA6A246BA27158F76C4FE2C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-DFVideoPlayer_Example-DFVideoPlayer-DFVideoPlayer";
+			productName = "Pods-DFVideoPlayer_Example-DFVideoPlayer-DFVideoPlayer";
+			productReference = 47A24DF58A3443482D2BC1A1 /* DFVideoPlayer.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		49B2CA70860C32DF4EC9F119 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+			};
+			buildConfigurationList = 4CA50842EBA94944A9A45211 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7D102DADE384CC526A5877B3;
+			productRefGroup = 61304BEABD1EC58B4A8F6926 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9788AA19C91B57EF5428DBC8 /* Pods-DFVideoPlayer_Example */,
+				1F118F919375EE56CE609EC6 /* Pods-DFVideoPlayer_Example-DFVideoPlayer */,
+				DA4936B1B4B108515F38833C /* Pods-DFVideoPlayer_Example-DFVideoPlayer-DFVideoPlayer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BCA6A246BA27158F76C4FE2C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89F534A919BC449FA44CEF37 /* kr-video-player-close@2x.png in Resources */,
+				4A34A2D102DBA63E36EBB733 /* kr-video-player-close@3x.png in Resources */,
+				2DAC4A11B501AFD546B8CEAF /* kr-video-player-fullscreen@2x.png in Resources */,
+				6F15CE50EA29B37E16E3BD50 /* kr-video-player-fullscreen@3x.png in Resources */,
+				6570E6903BD162246F98A115 /* kr-video-player-pause@2x.png in Resources */,
+				0D2A09AE2875AE0A93575342 /* kr-video-player-pause@3x.png in Resources */,
+				13684A30D71C650AC6B7E22A /* kr-video-player-play@2x.png in Resources */,
+				B7CC9AA0361C76974842308D /* kr-video-player-play@3x.png in Resources */,
+				7653DE2ED720EA63FF14BE02 /* kr-video-player-point@2x.png in Resources */,
+				8A575BC79F85226BA9E85B94 /* kr-video-player-point@3x.png in Resources */,
+				F36F5CBD1939917782B78EEB /* kr-video-player-shrinkscreen@2x.png in Resources */,
+				4540F0882CB4B3A4675F74A3 /* kr-video-player-shrinkscreen@3x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E06DB0D36BA81484F7054647 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75856AF30F2D76B64FE263B3 /* DFVideoPlayer.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3ED1D79EE9252EACDC589549 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FE3911B3404BB570696CB66 /* DFVideoControlView.m in Sources */,
+				23D539A040A7C3408E020ADF /* DFVideoPlayer.m in Sources */,
+				2EB48CF8CDBEC581B8C62F3E /* Pods-DFVideoPlayer_Example-DFVideoPlayer-dummy.m in Sources */,
+				D8C2FDA350DBD04349C80351 /* Utilities.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA494863A2218F08E6BC96B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFB23C16A16F7E00BBCBFDE2 /* Pods-DFVideoPlayer_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6EAC07E43A97F07044FB45B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		290DF94B14B0E775062DA333 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-DFVideoPlayer_Example-DFVideoPlayer-DFVideoPlayer";
+			target = DA4936B1B4B108515F38833C /* Pods-DFVideoPlayer_Example-DFVideoPlayer-DFVideoPlayer */;
+			targetProxy = 208CBFB4C0C72C60E3394BB0 /* PBXContainerItemProxy */;
+		};
+		751DD251087D74DC747752A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-DFVideoPlayer_Example-DFVideoPlayer";
+			target = 1F118F919375EE56CE609EC6 /* Pods-DFVideoPlayer_Example-DFVideoPlayer */;
+			targetProxy = 56ABAAE55000A49092C615CE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		19E8C07C431387B5A973618D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B24DF6CE431384892EBBA3C /* Pods-DFVideoPlayer_Example.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-DFVideoPlayer_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-DFVideoPlayer_Example/Pods-DFVideoPlayer_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_DFVideoPlayer_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		49267E9C852D14FE29500C12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D822B016D07261718492A47 /* Pods-DFVideoPlayer_Example-DFVideoPlayer-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-DFVideoPlayer_Example-DFVideoPlayer/Pods-DFVideoPlayer_Example-DFVideoPlayer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-DFVideoPlayer_Example-DFVideoPlayer/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-DFVideoPlayer_Example-DFVideoPlayer/Pods-DFVideoPlayer_Example-DFVideoPlayer.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = DFVideoPlayer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		79D368E978111621AC4A035E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods-DFVideoPlayer_Example";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = DFVideoPlayer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		7DBB98BA92F7B39FEC52482F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D822B016D07261718492A47 /* Pods-DFVideoPlayer_Example-DFVideoPlayer-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-DFVideoPlayer_Example-DFVideoPlayer/Pods-DFVideoPlayer_Example-DFVideoPlayer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-DFVideoPlayer_Example-DFVideoPlayer/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-DFVideoPlayer_Example-DFVideoPlayer/Pods-DFVideoPlayer_Example-DFVideoPlayer.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = DFVideoPlayer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		97A31D1F914E5680374C1947 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		A5E2AA58514C5227833D8A02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C18E8A201E02CE415E365028 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods-DFVideoPlayer_Example";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = DFVideoPlayer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		D102D181702F9211B85DE27F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6624DDD33B32F8A7BC9D6EF7 /* Pods-DFVideoPlayer_Example.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-DFVideoPlayer_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-DFVideoPlayer_Example/Pods-DFVideoPlayer_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_DFVideoPlayer_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		07FCA8DC4C9BC420FA6FBC3E /* Build configuration list for PBXNativeTarget "Pods-DFVideoPlayer_Example-DFVideoPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49267E9C852D14FE29500C12 /* Debug */,
+				7DBB98BA92F7B39FEC52482F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0EE84E7D1BF592EF7F4D1A34 /* Build configuration list for PBXNativeTarget "Pods-DFVideoPlayer_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19E8C07C431387B5A973618D /* Debug */,
+				D102D181702F9211B85DE27F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CA50842EBA94944A9A45211 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97A31D1F914E5680374C1947 /* Debug */,
+				A5E2AA58514C5227833D8A02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C18FE933A8B27DA26B2D8DF8 /* Build configuration list for PBXNativeTarget "Pods-DFVideoPlayer_Example-DFVideoPlayer-DFVideoPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C18E8A201E02CE415E365028 /* Debug */,
+				79D368E978111621AC4A035E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 49B2CA70860C32DF4EC9F119 /* Project object */;
+}

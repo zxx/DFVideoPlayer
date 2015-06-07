@@ -1,0 +1,16 @@
+PODS:
+  - DFVideoPlayer (0.1):
+    - DFVideoPlayer/Vitamio (= 0.1)
+  - DFVideoPlayer/Vitamio (0.1)
+
+DEPENDENCIES:
+  - DFVideoPlayer (from `../`)
+
+EXTERNAL SOURCES:
+  DFVideoPlayer:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  DFVideoPlayer: 67b783754195430747efc233e12edf5cfa3704ee
+
+COCOAPODS: 0.36.4

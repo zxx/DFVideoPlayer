@@ -1,0 +1,6 @@
+framework module DFVideoPlayer {
+  umbrella header "Pods-DFVideoPlayer_Example-DFVideoPlayer-umbrella.h"
+
+  export *
+  module * { export * }
+}

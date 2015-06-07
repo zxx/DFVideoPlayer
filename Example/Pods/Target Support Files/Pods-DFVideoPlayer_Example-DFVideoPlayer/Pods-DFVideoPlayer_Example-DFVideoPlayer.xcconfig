@@ -1,0 +1,3 @@
+PODS_DFVIDEOPLAYER_EXAMPLE_DFVIDEOPLAYER_HEADER_SEARCH_PATHS = ${PODS_ROOT}/{s.name}/Pod/Vendor/Vitamio/include/**
+PODS_DFVIDEOPLAYER_EXAMPLE_DFVIDEOPLAYER_LIBRARY_SEARCH_PATHS = "$(PODS_ROOT)/../../Pod/Vendor/Vitamio" "$(PODS_ROOT)/../../Pod/Vendor/Vitamio" "$(PODS_ROOT)/../../Pod/Vendor/Vitamio"
+PODS_DFVIDEOPLAYER_EXAMPLE_DFVIDEOPLAYER_OTHER_LDFLAGS = -l"Vitamio" -l"bz2" -l"ffmpeg" -l"iconv" -l"openssl" -l"stdc++" -l"z" -framework "AVFoundation" -framework "AudioToolbox" -framework "CoreGraphics" -framework "CoreMedia" -framework "Foundation" -framework "MediaPlayer" -framework "OpenGlES" -framework "QuartzCore" -framework "UIKit"
