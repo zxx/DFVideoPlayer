@@ -58,7 +58,7 @@
     [self addFixedConstraintsForSubviews];
     [self updateConstraints];
     
-    [self startPlayerWithUrl:self.videoUrl];
+    [self start];
 }
 
 - (void)showInParentView:(UIView *)parentView
@@ -71,7 +71,7 @@
     [self addFixedConstraintsForSubviews];
     [self updateConstraints];
     
-    [self startPlayerWithUrl:self.videoUrl];
+    [self start];
 }
 
 - (void)start
@@ -85,9 +85,6 @@
     [self.view removeFromSuperview];
 }
 
-- (void)setOrientation:(UIInterfaceOrientation)orientation {
-    
-}
 - (void)updateViewWithInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     [self updateConstraintsForInterfaceOrientation:interfaceOrientation];
@@ -103,38 +100,34 @@
 - (void)updateConstraintsForInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     NSMutableArray *newConstraints;
-    if (self.delegate && [self.delegate respondsToSelector:@selector(videoPlayerLayout:constraintsForInterfaceOrientation:)]) {
-        newConstraints = [self.delegate videoPlayerLayout:self constraintsForInterfaceOrientation:interfaceOrientation];
+    NSDictionary *views = @{@"view":self.view};
+    newConstraints = [NSMutableArray array];
+    
+    if (UIInterfaceOrientationIsPortrait(interfaceOrientation)) {
+        [newConstraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"|[view]|"
+                                                                                    options:0
+                                                                                    metrics:nil
+                                                                                      views:views]];
+        [newConstraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-64-[view]"
+                                                                                    options:0
+                                                                                    metrics:nil
+                                                                                      views:views]];
+        [newConstraints addObject:[NSLayoutConstraint constraintWithItem:self.view
+                                                               attribute:NSLayoutAttributeHeight
+                                                               relatedBy:NSLayoutRelationEqual
+                                                                  toItem:self.parentView
+                                                               attribute:NSLayoutAttributeWidth
+                                                              multiplier:(9.0 / 16.0)
+                                                                constant:0.0]];
     } else {
-        NSDictionary *views = @{@"view":self.view};
-        newConstraints = [NSMutableArray array];
-        
-        if (UIInterfaceOrientationIsPortrait(interfaceOrientation)) {
-            [newConstraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"|[view]|"
-                                                                                        options:0
-                                                                                        metrics:nil
-                                                                                          views:views]];
-            [newConstraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-64-[view]"
-                                                                                        options:0
-                                                                                        metrics:nil
-                                                                                          views:views]];
-            [newConstraints addObject:[NSLayoutConstraint constraintWithItem:self.view
-                                                                   attribute:NSLayoutAttributeHeight
-                                                                   relatedBy:NSLayoutRelationEqual
-                                                                      toItem:self.parentView
-                                                                   attribute:NSLayoutAttributeWidth
-                                                                  multiplier:(9.0 / 16.0)
-                                                                    constant:0.0]];
-        } else {
-            [newConstraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"|[view]|"
-                                                                                        options:0
-                                                                                        metrics:nil
-                                                                                          views:views]];
-            [newConstraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[view]|"
-                                                                                        options:0
-                                                                                        metrics:nil
-                                                                                          views:views]];
-        }
+        [newConstraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"|[view]|"
+                                                                                    options:0
+                                                                                    metrics:nil
+                                                                                      views:views]];
+        [newConstraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[view]|"
+                                                                                    options:0
+                                                                                    metrics:nil
+                                                                                      views:views]];
     }
 
     if (self.constraints) {
@@ -170,7 +163,7 @@
                                                                            views:views]];
 }
 
-#pragma mark - DFVideoControlView
+#pragma mark - DFVideoControlViewDelegate
 
 - (void)videoControlView:(DFVideoControlView *)controlView didPlayButtonClicked:(UIButton *)playerButton
 {

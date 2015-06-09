@@ -109,6 +109,7 @@ static const CGFloat kVideoControlBarAutoFadeOutTimeinterval = 5.0;
 
 - (void)reset
 {
+    // TODO
 }
 
 - (void)updateProgress:(long)currentTime totalTime:(long)totalTime {

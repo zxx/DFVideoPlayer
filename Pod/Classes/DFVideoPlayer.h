@@ -17,8 +17,6 @@
 - (void)videoPlayer:(DFVideoPlayer *)player didCompleted:(BOOL)complete;
 - (void)videoPlayer:(DFVideoPlayer *)player didError:(NSError *)error;
 
-- (NSMutableArray *)videoPlayerLayout:(DFVideoPlayer *)player constraintsForInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
-
 @end
 
 @interface DFVideoPlayer :NSObject
@@ -36,7 +34,6 @@
 - (void)dismiss;
 
 /* willRotateToInterfaceOrientation 中调用 */
-- (void)setOrientation:(UIInterfaceOrientation)orientation;
 - (void)updateViewWithInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
 
 @end
