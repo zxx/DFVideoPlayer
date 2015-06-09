@@ -1,9 +1,9 @@
 //
-//  KRVideoPlayerControlView.h
-//  KRKit
+//  DFVideoControlView.h
+//  DFVideoPlayer
 //
-//  Created by aidenluo on 5/23/15.
-//  Copyright (c) 2015 36kr. All rights reserved.
+//  Created by zhudf on 15/5/29.
+//  Copyright (c) 2015年 朱东方. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

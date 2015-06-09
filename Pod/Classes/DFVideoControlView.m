@@ -1,9 +1,9 @@
 //
-//  KRVideoPlayerControlView.m
-//  KRKit
+//  DFVideoControlView.m
+//  DFVideoPlayer
 //
-//  Created by aidenluo on 5/23/15.
-//  Copyright (c) 2015 36kr. All rights reserved.
+//  Created by zhudf on 15/5/29.
+//  Copyright (c) 2015年 朱东方. All rights reserved.
 //
 
 #import "DFVideoControlView.h"
@@ -220,7 +220,6 @@ static const CGFloat kVideoControlBarAutoFadeOutTimeinterval = 5.0;
 
 - (NSString *)videoImageName:(NSString *)name {
     if (name) {
-        
         NSString *path = [NSString stringWithFormat:@"%@/DFVideoPlayer.bundle/%@",[NSBundle bundleForClass:[self class]].bundlePath, name];
         return path;
     }
@@ -262,7 +261,7 @@ static const CGFloat kVideoControlBarAutoFadeOutTimeinterval = 5.0;
 - (UIButton *)playButton {
     if (!_playButton) {
         _playButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_playButton setImage:[UIImage imageNamed:[self videoImageName:@"kr-video-player-play"]] forState:UIControlStateNormal];
+        [_playButton setImage:[UIImage imageNamed:[self videoImageName:@"df-video-player-play"]] forState:UIControlStateNormal];
         _playButton.bounds = CGRectMake(0, 0, kVideoControlBarHeight, kVideoControlBarHeight);
         [_playButton addTarget:self action:@selector(playButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -272,7 +271,7 @@ static const CGFloat kVideoControlBarAutoFadeOutTimeinterval = 5.0;
 - (UIButton *)pauseButton {
     if (!_pauseButton) {
         _pauseButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_pauseButton setImage:[UIImage imageNamed:[self videoImageName:@"kr-video-player-pause"]] forState:UIControlStateNormal];
+        [_pauseButton setImage:[UIImage imageNamed:[self videoImageName:@"df-video-player-pause"]] forState:UIControlStateNormal];
         _pauseButton.bounds = CGRectMake(0, 0, kVideoControlBarHeight, kVideoControlBarHeight);
         [_pauseButton addTarget:self action:@selector(pauseButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -282,7 +281,7 @@ static const CGFloat kVideoControlBarAutoFadeOutTimeinterval = 5.0;
 - (UIButton *)fullScreenButton {
     if (!_fullScreenButton) {
         _fullScreenButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_fullScreenButton setImage:[UIImage imageNamed:[self videoImageName:@"kr-video-player-fullscreen"]] forState:UIControlStateNormal];
+        [_fullScreenButton setImage:[UIImage imageNamed:[self videoImageName:@"df-video-player-fullscreen"]] forState:UIControlStateNormal];
         _fullScreenButton.bounds = CGRectMake(0, 0, kVideoControlBarHeight, kVideoControlBarHeight);
         [_fullScreenButton addTarget:self action:@selector(fullScreenButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -292,7 +291,7 @@ static const CGFloat kVideoControlBarAutoFadeOutTimeinterval = 5.0;
 - (UIButton *)shrinkScreenButton {
     if (!_shrinkScreenButton) {
         _shrinkScreenButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_shrinkScreenButton setImage:[UIImage imageNamed:[self videoImageName:@"kr-video-player-shrinkscreen"]] forState:UIControlStateNormal];
+        [_shrinkScreenButton setImage:[UIImage imageNamed:[self videoImageName:@"df-video-player-shrinkscreen"]] forState:UIControlStateNormal];
         _shrinkScreenButton.bounds = CGRectMake(0, 0, kVideoControlBarHeight, kVideoControlBarHeight);
         [_shrinkScreenButton addTarget:self action:@selector(shrinkScreenButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -302,7 +301,7 @@ static const CGFloat kVideoControlBarAutoFadeOutTimeinterval = 5.0;
 - (UISlider *)progressSlider {
     if (!_progressSlider) {
         _progressSlider = [[UISlider alloc] init];
-        [_progressSlider setThumbImage:[UIImage imageNamed:[self videoImageName:@"kr-video-player-point"]] forState:UIControlStateNormal];
+        [_progressSlider setThumbImage:[UIImage imageNamed:[self videoImageName:@"df-video-player-point"]] forState:UIControlStateNormal];
         [_progressSlider setMinimumTrackTintColor:[UIColor whiteColor]];
         [_progressSlider setMaximumTrackTintColor:[UIColor lightGrayColor]];
         _progressSlider.value = 0.f;
@@ -318,7 +317,7 @@ static const CGFloat kVideoControlBarAutoFadeOutTimeinterval = 5.0;
 - (UIButton *)closeButton {
     if (!_closeButton) {
         _closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_closeButton setImage:[UIImage imageNamed:[self videoImageName:@"kr-video-player-close"]] forState:UIControlStateNormal];
+        [_closeButton setImage:[UIImage imageNamed:[self videoImageName:@"df-video-player-close"]] forState:UIControlStateNormal];
         _closeButton.bounds = CGRectMake(0, 0, kVideoControlBarHeight, kVideoControlBarHeight);
         [_closeButton addTarget:self action:@selector(closeButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     }
