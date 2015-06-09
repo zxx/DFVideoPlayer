@@ -1,9 +1,7 @@
 # DFVideoPlayer
 
-[![CI Status](http://img.shields.io/travis/zhudf/DFVideoPlayer.svg?style=flat)](https://travis-ci.org/zhudf/DFVideoPlayer)
+[![CI Status](http://img.shields.io/travis/zhudf/DFVideoPlayer.svg?style=flat)](https://travis-ci.org/zhudongfang/DFVideoPlayer)
 [![Version](https://img.shields.io/cocoapods/v/DFVideoPlayer.svg?style=flat)](http://cocoapods.org/pods/DFVideoPlayer)
-[![License](https://img.shields.io/cocoapods/l/DFVideoPlayer.svg?style=flat)](http://cocoapods.org/pods/DFVideoPlayer)
-[![Platform](https://img.shields.io/cocoapods/p/DFVideoPlayer.svg?style=flat)](http://cocoapods.org/pods/DFVideoPlayer)
 
 ## Usage
 
@@ -22,8 +20,9 @@ pod "DFVideoPlayer"
 
 ## Author
 
-zhudf, zhudongfang312@126.com
+dongfang.zhu@inbox.com
 
 ## License
 
-DFVideoPlayer is available under the MIT license. See the LICENSE file for more info.
+Please refer [License](http://www.vitamio.org/en/License/)
+

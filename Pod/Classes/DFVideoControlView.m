@@ -220,7 +220,8 @@ static const CGFloat kVideoControlBarAutoFadeOutTimeinterval = 5.0;
 
 - (NSString *)videoImageName:(NSString *)name {
     if (name) {
-        NSString *path = [NSString stringWithFormat:@"%@",name];
+        
+        NSString *path = [NSString stringWithFormat:@"%@/DFVideoPlayer.bundle/%@",[NSBundle bundleForClass:[self class]].bundlePath, name];
         return path;
     }
     return nil;
