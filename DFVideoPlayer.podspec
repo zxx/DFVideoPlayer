@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "DFVideoPlayer"
-  s.version          = "0.1"
+  s.version          = "0.1.0"
   s.summary          = "powerful video player wrapped around Vitaimo like weico"
   s.description      = <<-DESC
 												Powerful video player wrapped around Vitamio
