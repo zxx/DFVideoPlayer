@@ -21,19 +21,17 @@
 
 @interface DFVideoPlayer :NSObject
 
-@property (nonatomic, readonly) UIView *view;
-@property (nonatomic) UIInterfaceOrientation orientation;
+@property (nonatomic, readonly) UIView  *view;
+@property (nonatomic, copy)     NSURL   *videoUrl;
+
 @property (nonatomic, weak) id<DFVideoPlayerDelegate>       delegate;
 
 - (instancetype)initWithURL:(NSURL *)url;
 
-/* viewWillAppear 中调用 */
 - (void)showInWindow;
-/* viewWillAppear 中调用 */
-- (void)showInParentView:(UIView *)parentView;
-- (void)dismiss;
+- (void)showInView:(UIView *)view;
+- (void)showInView:(UIView *)view inset:(UIEdgeInsets)inset;
 
-/* willRotateToInterfaceOrientation 中调用 */
-- (void)updateViewWithInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
+- (void)dismiss;
 
 @end

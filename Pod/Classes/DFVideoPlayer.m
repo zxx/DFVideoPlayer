@@ -12,15 +12,14 @@
 
 @interface DFVideoPlayer ()<VMediaPlayerDelegate, DFVideoControlViewDelegate>
 
-@property (nonatomic, strong) VMediaPlayer *mediaPlayer;
+@property (nonatomic, strong)   VMediaPlayer        *mediaPlayer;
 
 @property (nonatomic, strong)   UIView              *view;
 @property (nonatomic, strong)   UIView              *carrierView;
 @property (nonatomic, strong)   DFVideoControlView  *videoControlView;
 
 @property (nonatomic, weak)     UIView              *parentView;
-
-@property (nonatomic, copy)     NSURL               *videoUrl;
+@property (nonatomic, assign)   UIEdgeInsets        inset;
 
 @property (nonatomic, assign)   long                duration;
 @property (nonatomic, strong)   NSTimer             *durationTimer;
@@ -28,7 +27,7 @@
 @property (nonatomic, assign)   BOOL                progressDragging;
 @property (nonatomic, assign)   BOOL                mediaPlayerInited;
 
-@property (nonatomic, copy)     NSArray             *constraints;
+@property (nonatomic, strong)   NSArray             *constraints;
 
 @end
 
@@ -36,10 +35,15 @@
 
 #pragma mark - Life Cycle
 
+- (void)dealloc
+{
+    NSLog(@"DFVideoPlayer 销毁....");
+}
+
 - (instancetype)initWithURL:(NSURL *)videoUrl
 {
     if (self = [super init]) {
-        self.videoUrl = videoUrl;
+        _videoUrl = videoUrl;
     }
     return self;
 }
@@ -50,28 +54,33 @@
     if (!windown) {
         windown = [[UIApplication sharedApplication].windows firstObject];
     }
-    [self.view addSubview:self.carrierView];
-    [self.view addSubview:self.videoControlView];
-    [windown addSubview:self.view];
     
-    self.parentView = windown;
-    [self addFixedConstraintsForSubviews];
-    [self updateConstraints];
-    
-    [self start];
+    [self showInView:windown inset:UIEdgeInsetsMake(0, 0, 0, 0)];
 }
 
-- (void)showInParentView:(UIView *)parentView
+- (void)showInView:(UIView *)parentView
+{
+    [self showInView:parentView inset:UIEdgeInsetsMake(0, 0, 0, 0)];
+}
+
+- (void)showInView:(UIView *)parentView inset:(UIEdgeInsets)inset
 {
     [self.view addSubview:self.carrierView];
     [self.view addSubview:self.videoControlView];
     [parentView addSubview:self.view];
     
     self.parentView = parentView;
+    self.inset = inset;
+    
     [self addFixedConstraintsForSubviews];
     [self updateConstraints];
     
-    [self start];
+    [self startPlayerWithUrl:self.videoUrl];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(updateConstraints)
+                                                 name:UIApplicationDidChangeStatusBarFrameNotification
+                                               object:nil];
 }
 
 - (void)start
@@ -83,17 +92,13 @@
 {
     [self stopPlayer];
     [self.view removeFromSuperview];
-}
-
-- (void)updateViewWithInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    [self updateConstraintsForInterfaceOrientation:interfaceOrientation];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)updateConstraints
 {
-    UIInterfaceOrientation interfaceOrientaion = [UIApplication sharedApplication].statusBarOrientation;
-    [self updateConstraintsForInterfaceOrientation:interfaceOrientaion];
+    [self updateConstraintsForInterfaceOrientation:[UIApplication sharedApplication].statusBarOrientation];
 }
 
 /* 这块的处理是从AdaptivePhoto项目中学到的 */
@@ -104,21 +109,22 @@
     newConstraints = [NSMutableArray array];
     
     if (UIInterfaceOrientationIsPortrait(interfaceOrientation)) {
-        [newConstraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"|[view]|"
-                                                                                    options:0
-                                                                                    metrics:nil
-                                                                                      views:views]];
-        [newConstraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-64-[view]"
-                                                                                    options:0
-                                                                                    metrics:nil
-                                                                                      views:views]];
-        [newConstraints addObject:[NSLayoutConstraint constraintWithItem:self.view
-                                                               attribute:NSLayoutAttributeHeight
-                                                               relatedBy:NSLayoutRelationEqual
-                                                                  toItem:self.parentView
-                                                               attribute:NSLayoutAttributeWidth
-                                                              multiplier:(9.0 / 16.0)
-                                                                constant:0.0]];
+            [[UIApplication sharedApplication] setStatusBarHidden:NO];
+            [newConstraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:[NSString stringWithFormat:@"|-%f-[view]-%f-|", self.inset.left, self.inset.right]
+                                                                                        options:0
+                                                                                        metrics:nil
+                                                                                          views:views]];
+            [newConstraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:[NSString stringWithFormat:@"V:|-%f-[view]", self.inset.top]
+                                                                                        options:0
+                                                                                        metrics:nil
+                                                                                          views:views]];
+            [newConstraints addObject:[NSLayoutConstraint constraintWithItem:self.view
+                                                                   attribute:NSLayoutAttributeHeight
+                                                                   relatedBy:NSLayoutRelationEqual
+                                                                      toItem:self.view
+                                                                   attribute:NSLayoutAttributeWidth
+                                                                  multiplier:(9.0 / 16.0)
+                                                                    constant:0.0]];
     } else {
         [newConstraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"|[view]|"
                                                                                     options:0
@@ -221,7 +227,7 @@
 {
     [player start];
     self.duration = [player getDuration];
-    [self startDurationTimer];
+    [self startTimer];
     
     [self.videoControlView setPlaying:YES];
 }
@@ -331,13 +337,13 @@
 
 - (void)stopPlayer
 {
-    [self stopDurationTimer];
+    [self stopTimer];
     [self.mediaPlayer reset];
     
     self.mediaPlayerInited = NO;
 }
 
-- (void)startDurationTimer
+- (void)startTimer
 {
     self.durationTimer = [NSTimer timerWithTimeInterval:1.0
                                                  target:self
@@ -347,7 +353,7 @@
     [[NSRunLoop mainRunLoop] addTimer:self.durationTimer forMode:NSRunLoopCommonModes];
 }
 
-- (void)stopDurationTimer
+- (void)stopTimer
 {
     [self.durationTimer invalidate];
 }
@@ -360,10 +366,9 @@
         [invocation setSelector:selector];
         [invocation setTarget:[UIDevice currentDevice]];
         int val = orientation;
-        [invocation setArgument:&val atIndex:2];
+        [invocation setArgument:&val atIndex:2];    // 0 target 1 selector 2..n parameters
         [invocation invoke];
     }
-    
 }
 
 #pragma mark - Getters and Setters

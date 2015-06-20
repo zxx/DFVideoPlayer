@@ -19,6 +19,7 @@
     
     self.window.rootViewController = [[DFViewController alloc] init];
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 							

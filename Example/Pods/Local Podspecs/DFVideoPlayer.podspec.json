@@ -1,6 +1,6 @@
 {
   "name": "DFVideoPlayer",
-  "version": "0.1",
+  "version": "0.1.0",
   "summary": "powerful video player wrapped around Vitaimo like weico",
   "description": "\t\t\t\t\t\t\t\t\t\t\t\tPowerful video player wrapped around Vitamio\n\t\t\t\t\t\t\t\t\t\t\t\t* Support MMS / RTSP / RTP / SDP / HTTP ...\n\t\t\t\t\t\t\t\t\t\t\t\t* Support MPEG-4 / H.264 / H.265 / RMVB ...\n",
   "homepage": "https://github.com/zhudongfang/DFVideoPlayer",
@@ -10,10 +10,10 @@
   },
   "source": {
     "git": "https://github.com/zhudongfang/DFVideoPlayer.git",
-    "tag": "0.1"
+    "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "7.0"
+    "ios": "6.0"
   },
   "requires_arc": true,
   "source_files": "Pod/Classes/**/*",

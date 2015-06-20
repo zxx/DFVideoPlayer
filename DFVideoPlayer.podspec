@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/zhudongfang/DFVideoPlayer.git", :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.platform     = :ios, '7.0'
+  s.platform     = :ios, '6.0'
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*' 
@@ -36,7 +36,6 @@ Pod::Spec.new do |s|
 	# 以下依赖库放到这里活着subspec都ok
   s.frameworks = 'UIKit','AVFoundation','AudioToolbox','CoreGraphics','CoreMedia','Foundation','MediaPlayer','OpenGlES','QuartzCore'
 	s.libraries = 'bz2','z','stdc++','iconv'
-  # s.dependency 'AFNetworking', '~> 2.3'
 	
 	s.subspec 'Vitamio' do |vitamio|
 		vitamio.preserve_paths = 'Pod/Vendor/Vitamio/include/Vitamio/*.h'
