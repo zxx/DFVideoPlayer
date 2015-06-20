@@ -38,6 +38,9 @@ pod "DFVideoPlayer"
 
 dongfang.zhu@inbox.com
 
+感谢 [aidenluo](http://weibo.com/1840543654)
+感谢 [cheyi](http://weibo.com/322160605)
+
 ## License
 
 Please refer [License](http://www.vitamio.org/en/License/)
