@@ -1,15 +1,29 @@
 # DFVideoPlayer
 
-[![CI Status](http://img.shields.io/travis/zhudf/DFVideoPlayer.svg?style=flat)](https://travis-ci.org/zhudongfang/DFVideoPlayer)
-[![Version](https://img.shields.io/cocoapods/v/DFVideoPlayer.svg?style=flat)](http://cocoapods.org/pods/DFVideoPlayer)
+[![Total views](https://sourcegraph.com/api/repos/github.com/zhudongfang/DFVideoPlayer/.counters/views.png)](https://sourcegraph.com/github.com/zhudongfang/DFVideoPlayer)
+[![Views in the last 24 hours](https://sourcegraph.com/api/repos/github.com/zhudongfang/DFVideoPlayer/.counters/views-24h.png)](https://sourcegraph.com/github.com/zhudongfang/DFVideoPlayer)
+
+[DFVideoPlayer](https://github.com/zhudongfang/DFVideoPlayer/) 改自 [KRVideoPlayer](https://github.com/36Kr-Mobile/KRVideoPlayer) 内部由 [Vitamio](https://github.com/yixia/Vitamio-iOS) 实现， 支持更多[视频格式](https://www.vitamio.org/en/License/)
 
 ## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+```
+self.player = [[DFVideoPlayer alloc] initWithURL:url];
+[self.player showInWindow];
+// or
+[self.player showInView:self.view]
+// or
+[self.player showInView:self.view inset:UIEdgeInsetMake(20, 0, 0, 0)];
+
+```
+
 ## Requirements
 
+```
 iOS >= 6.0
+```
 
 ## Installation
 
