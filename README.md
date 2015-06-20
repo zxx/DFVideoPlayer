@@ -9,6 +9,8 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
+iOS >= 6.0
+
 ## Installation
 
 DFVideoPlayer is available through [CocoaPods](http://cocoapods.org). To install
@@ -25,4 +27,3 @@ dongfang.zhu@inbox.com
 ## License
 
 Please refer [License](http://www.vitamio.org/en/License/)
-
