@@ -1,0 +1,4 @@
+删除远程tag
+```
+git push origin --delete tag 0.1
+```
