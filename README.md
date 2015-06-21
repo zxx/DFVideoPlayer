@@ -5,7 +5,7 @@
 
 [DFVideoPlayer](https://github.com/zhudongfang/DFVideoPlayer/) 改自 [KRVideoPlayer](https://github.com/36Kr-Mobile/KRVideoPlayer) 内部由 [Vitamio](https://github.com/yixia/Vitamio-iOS) 实现， 支持更多[视频格式](https://www.vitamio.org/en/License/)
 
-![](example.gif)
+![](DFVideoPlayer.gif)
 
 ## Usage
 
