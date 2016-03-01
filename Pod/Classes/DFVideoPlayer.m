@@ -19,7 +19,6 @@
 @property (nonatomic, strong)   DFVideoControlView  *videoControlView;
 
 @property (nonatomic, weak)     UIView              *parentView;
-@property (nonatomic, assign)   UIEdgeInsets        inset;
 
 @property (nonatomic, assign)   long                duration;
 @property (nonatomic, strong)   NSTimer             *durationTimer;
@@ -29,6 +28,9 @@
 
 @property (nonatomic, strong)   NSArray             *constraints;
 
+@property (nonatomic, assign, getter = isFullScreen) BOOL fullScreen;
+@property (nonatomic, assign) CGRect originalRect;
+
 @end
 
 @implementation DFVideoPlayer
@@ -37,13 +39,13 @@
 
 - (void)dealloc
 {
-    NSLog(@"DFVideoPlayer 销毁....");
+    NSLog(@"DFVideoPlayer dealloc....");
 }
 
-- (instancetype)initWithURL:(NSURL *)videoUrl
+- (instancetype)initWithURL:(NSURL *)videoURL
 {
     if (self = [super init]) {
-        _videoUrl = videoUrl;
+        _videoURL = videoURL;
     }
     return self;
 }
@@ -55,37 +57,29 @@
         windown = [[UIApplication sharedApplication].windows firstObject];
     }
     
-    [self showInView:windown inset:UIEdgeInsetsMake(0, 0, 0, 0)];
+    [self showInView:windown];
 }
 
 - (void)showInView:(UIView *)parentView
 {
-    [self showInView:parentView inset:UIEdgeInsetsMake(0, 0, 0, 0)];
+    [self showInView:parentView withRect:CGRectMake(0, 0, CGRectGetWidth(parentView.bounds), CGRectGetWidth(parentView.bounds) * 9 / 16.0)];
 }
 
-- (void)showInView:(UIView *)parentView inset:(UIEdgeInsets)inset
+- (void)showInView:(UIView *)view withRect:(CGRect)rect
 {
+    _parentView = view;
+    
+    self.view.frame = rect;
     [self.view addSubview:self.carrierView];
     [self.view addSubview:self.videoControlView];
-    [parentView addSubview:self.view];
+    [view addSubview:self.view];
     
-    self.parentView = parentView;
-    self.inset = inset;
-    
-    [self addFixedConstraintsForSubviews];
-    [self updateConstraints];
-    
-    [self startPlayerWithUrl:self.videoUrl];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(updateConstraints)
-                                                 name:UIApplicationDidChangeStatusBarFrameNotification
-                                               object:nil];
+    [self start];
 }
 
 - (void)start
 {
-    [self startPlayerWithUrl:self.videoUrl];
+    [self startPlayerWithUrl:self.videoURL];
 }
 
 - (void)dismiss
@@ -96,81 +90,7 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)updateConstraints
-{
-    [self updateConstraintsForInterfaceOrientation:[UIApplication sharedApplication].statusBarOrientation];
-}
-
-/* 这块的处理是从AdaptivePhoto项目中学到的 */
-- (void)updateConstraintsForInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    NSMutableArray *newConstraints;
-    NSDictionary *views = @{@"view":self.view};
-    newConstraints = [NSMutableArray array];
-    
-    if (UIInterfaceOrientationIsPortrait(interfaceOrientation)) {
-            [[UIApplication sharedApplication] setStatusBarHidden:NO];
-            [newConstraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:[NSString stringWithFormat:@"|-%f-[view]-%f-|", self.inset.left, self.inset.right]
-                                                                                        options:0
-                                                                                        metrics:nil
-                                                                                          views:views]];
-            [newConstraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:[NSString stringWithFormat:@"V:|-%f-[view]", self.inset.top]
-                                                                                        options:0
-                                                                                        metrics:nil
-                                                                                          views:views]];
-            [newConstraints addObject:[NSLayoutConstraint constraintWithItem:self.view
-                                                                   attribute:NSLayoutAttributeHeight
-                                                                   relatedBy:NSLayoutRelationEqual
-                                                                      toItem:self.view
-                                                                   attribute:NSLayoutAttributeWidth
-                                                                  multiplier:(9.0 / 16.0)
-                                                                    constant:0.0]];
-    } else {
-        [newConstraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"|[view]|"
-                                                                                    options:0
-                                                                                    metrics:nil
-                                                                                      views:views]];
-        [newConstraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[view]|"
-                                                                                    options:0
-                                                                                    metrics:nil
-                                                                                      views:views]];
-    }
-
-    if (self.constraints) {
-        [self.parentView removeConstraints:self.constraints];
-    }
-    self.constraints = newConstraints;
-    [self.parentView addConstraints:self.constraints];
-    
-    // 强制刷新，必须要得到carrierView的frame。因为Vitamio不支持autolayout
-    // How can I get a view's current width and height when using autolayout constraints
-    // http://stackoverflow.com/a/13542580/3355097
-    [self.parentView layoutIfNeeded];
-}
-
-- (void)addFixedConstraintsForSubviews
-{
-    NSDictionary *views = @{@"carrierView":self.carrierView, @"videoControlView":self.videoControlView};
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|[carrierView]|"
-                                                                         options:0
-                                                                         metrics:nil
-                                                                           views:views]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|[videoControlView]|"
-                                                                         options:0
-                                                                         metrics:nil
-                                                                           views:views]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[carrierView]|"
-                                                                         options:0
-                                                                         metrics:nil
-                                                                           views:views]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[videoControlView]|"
-                                                                         options:0
-                                                                         metrics:nil
-                                                                           views:views]];
-}
-
 #pragma mark - DFVideoControlViewDelegate
-
 - (void)videoControlView:(DFVideoControlView *)controlView didPlayButtonClicked:(UIButton *)playerButton
 {
     if (self.mediaPlayerInited) {
@@ -200,12 +120,34 @@
 
 - (void)videoControlView:(DFVideoControlView *)controlView didFullScreenButtonClicked:(UIButton *)fullScrrenButton
 {
-    [self setDeviceOrientation:UIDeviceOrientationLandscapeLeft];
+    if (self.isFullScreen) return;
+    self.originalRect = self.view.frame;
+    
+    CGFloat height = self.parentView.bounds.size.height;
+    CGFloat width = self.parentView.bounds.size.width;
+    CGRect frame = CGRectMake((width - height) / 2, (height - width) / 2, height, width);
+    [UIView animateWithDuration:0.3f animations:^{
+        self.view.frame = frame;
+        [self.view setTransform:CGAffineTransformMakeRotation(M_PI_2)];
+    } completion:^(BOOL finished) {
+        self.fullScreen = YES;
+    }];
+    
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
 }
 
 - (void)videoControlView:(DFVideoControlView *)controlView didShrinkScreenButtonClicked:(UIButton *)shrinkScreenButton
 {
-    [self setDeviceOrientation:UIDeviceOrientationPortrait];
+    if (!self.isFullScreen) return;
+    
+    [UIView animateWithDuration:0.3f animations:^{
+        [self.view setTransform:CGAffineTransformIdentity];
+        self.view.frame = self.originalRect;
+    } completion:^(BOOL finished) {
+        self.fullScreen = NO;
+    }];
+    
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
 }
 
 - (void)videoControlView:(DFVideoControlView *)controlView didProgressSliderDragBegan:(UISlider *)sener
@@ -366,6 +308,7 @@
         [invocation setSelector:selector];
         [invocation setTarget:[UIDevice currentDevice]];
         int val = orientation;
+        
         [invocation setArgument:&val atIndex:2];    // 0 target 1 selector 2..n parameters
         [invocation invoke];
     }
@@ -376,10 +319,10 @@
 - (DFVideoControlView *)videoControlView
 {
     if (!_videoControlView) {
-        _videoControlView = [[DFVideoControlView alloc] init];
+        _videoControlView = [[DFVideoControlView alloc] initWithFrame:self.view.bounds];
+        _videoControlView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         _videoControlView.userInteractionEnabled = YES;
         _videoControlView.delegate = self;
-        _videoControlView.translatesAutoresizingMaskIntoConstraints = NO;
     }
     return _videoControlView;
 }
@@ -390,7 +333,6 @@
         _view = [[UIView alloc] init];
         [_view setClipsToBounds:YES];
         _view.backgroundColor = [UIColor blackColor];
-        _view.translatesAutoresizingMaskIntoConstraints = NO;
     }
     return _view;
 }
@@ -398,9 +340,9 @@
 - (UIView *)carrierView
 {
     if (!_carrierView) {
-        _carrierView = [[UIView alloc] init];
+        _carrierView = [[UIView alloc] initWithFrame:self.view.bounds];
+        _carrierView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         _carrierView.backgroundColor = [UIColor clearColor];
-        _carrierView.translatesAutoresizingMaskIntoConstraints = NO;
     }
     return _carrierView;
 }
@@ -413,4 +355,5 @@
     }
     return _mediaPlayer;
 }
+
 @end

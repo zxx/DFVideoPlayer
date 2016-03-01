@@ -10,7 +10,7 @@
 
 @implementation Utilities
 
-+(NSString *)timeToHumanString:(unsigned long)ms {
++ (NSString *)timeToHumanString:(unsigned long)ms {
     unsigned long seconds, h, m, s;
     char buff[128] = { 0 };
     NSString *nsRet = nil;

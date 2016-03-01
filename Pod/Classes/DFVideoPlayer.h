@@ -19,18 +19,18 @@
 
 @end
 
-@interface DFVideoPlayer :NSObject
+@interface DFVideoPlayer : NSObject
 
 @property (nonatomic, readonly) UIView  *view;
-@property (nonatomic, copy)     NSURL   *videoUrl;
+@property (nonatomic, copy)     NSURL   *videoURL;
 
-@property (nonatomic, weak) id<DFVideoPlayerDelegate>       delegate;
+@property (nonatomic, weak) id<DFVideoPlayerDelegate> delegate;
 
-- (instancetype)initWithURL:(NSURL *)url;
+- (instancetype)initWithURL:(NSURL *)videoURL;
 
 - (void)showInWindow;
 - (void)showInView:(UIView *)view;
-- (void)showInView:(UIView *)view inset:(UIEdgeInsets)inset;
+- (void)showInView:(UIView *)view withRect:(CGRect)rect;
 
 - (void)dismiss;
 
